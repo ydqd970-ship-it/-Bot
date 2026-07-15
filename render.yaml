@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: stock-analysis-bot
+    runtime: python
+    buildCommand: pip install -r requirements_bot.txt
+    startCommand: python discord_bot.py
+    envVars:
+      - key: DISCORD_BOT_TOKEN
+        sync: false
+      - key: DEEPSEEK_API_KEY
+        sync: false
+    healthCheckPath: /
